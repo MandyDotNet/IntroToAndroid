@@ -9,7 +9,7 @@ This repository contains all mobile applications developed for [COP2660 Intro to
 ## Project Directory
 | App Name | Description | Folder Link |
 | :--- | :--- | :--- |
-| **Birthday Card** | Basic activity lifecycle and UI components. | [Link](./placeholder) |
+| **Birthday Card** | Basic activity lifecycle and UI components. | [Link](./birthday-card) |
 | **Dice Roller** | ConstraintLayout and event listeners. | [Link](./placeholder) |
 | **Tip Calculator** | RecyclerView and custom Adapters. | [Link](./placeholder) |
 | **Scroll List / Super Heros** | [Brief description of app 4] | [Link](./placeholder) |
