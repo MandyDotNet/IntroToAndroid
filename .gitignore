@@ -1,6 +1,35 @@
-# Compiled class file
+# Ignores build folders in the root and ALL subdirectories
+**/build/
+**/.gradle/
+
+# --- Android / IntelliJ Standard ---
+*.iml
+.idea/workspace.xml
+.idea/libraries
+.idea/modules.xml
+.idea/tasks.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+captures/
+.externalNativeBuild
+.cxx
+local.properties
+
+# --- Build Output ---
+*.apk
+*.ap_
+*.aab
+*.dex
 *.class
 
+# --- Secrets & Signing ---
+*.jks
+*.keystore
+google-services.json
+
+# --- OS ---
+
+# --- GitHub Auto Generated ---
 # Log file
 *.log
 
