@@ -10,6 +10,10 @@
 .idea/tasks.xml
 .idea/navEditor.xml
 .idea/assetWizardSettings.xml
+.idea/deploymentTargetSelector.xml
+.idea/migrations.xml
+.idea/AndroidProjectSystem.xml
+.idea/compiler.xml
 captures/
 .externalNativeBuild
 .cxx
@@ -28,6 +32,8 @@ local.properties
 google-services.json
 
 # --- OS ---
+.DS_Store
+Thumbs.db
 
 # --- GitHub Auto Generated ---
 # Log file
