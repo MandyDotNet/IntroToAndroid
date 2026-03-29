@@ -28,14 +28,16 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
-                ){}
+                ){
+                    //GreetingText(message = "Happy Birthday Tim!", from = "From Amanda")
+                }
             }
         }
     }
 }
 
 @Composable
-fun GreetingText(message: String, modifier: Modifier = Modifier) {
+fun GreetingText(message: String, from: String ,modifier: Modifier = Modifier) {
     //GreetingText function displays text in the UI by calling Text() composable function
     Text(
         text = message,
@@ -43,12 +45,16 @@ fun GreetingText(message: String, modifier: Modifier = Modifier) {
         lineHeight = 116.sp,
         textAlign = TextAlign.Center
     )
+    Text(
+        text = from,
+        fontSize = 36.sp
+    )
 }
 
 @Preview(showBackground = true)
 @Composable
 fun BirthdayCardPreview() {
     HappyBirthdayTheme {
-        GreetingText("Happy Birthday Tim!")
+        GreetingText(message = "Happy Birthday Tim!", from = "From Amanda")
     }
 }
