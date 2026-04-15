@@ -154,14 +154,12 @@ fun EditNumberField(
 }
 @Composable
 fun RoundTheTipRow(
-    modifier: Modifier = Modifier,
     roundUp: Boolean,
     onRoundUpChanged: (Boolean) -> Unit,
+    modifier: Modifier = Modifier
 ) {
     Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .size(48.dp),
+        modifier = Modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Text(text = stringResource(R.string.round_up_tip))
@@ -169,7 +167,7 @@ fun RoundTheTipRow(
             modifier = modifier
                 .fillMaxWidth()
                 .wrapContentWidth(Alignment.End),
-            checked = false,
+            checked = roundUp,
             onCheckedChange = onRoundUpChanged
         )
     }
