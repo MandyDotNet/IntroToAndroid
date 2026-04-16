@@ -3,9 +3,9 @@ package com.example.roleplayaffirmations
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
@@ -14,7 +14,6 @@ import androidx.compose.foundation.layout.calculateStartPadding
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.statusBarsPadding
@@ -76,7 +75,8 @@ fun AffirmationsApp() {
     )
 }
 
-//Display size of each card and text deviate from tutorial for personalization
+//Display size of each card in list deviate from tutorial for personalization
+//Text is shown as white bold over opaque background
 
 @Composable
 fun AffirmationList(affirmationList: List<Affirmation>, modifier: Modifier = Modifier) {
@@ -111,7 +111,9 @@ fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier) {
                 text = stringResource(affirmation.stringResourceId),
                 modifier = Modifier
                     .align(Alignment.BottomStart)
-                    .padding(16.dp),
+                    .fillMaxWidth()
+                    .background(Color(0x99000000))
+                    .padding(start = 16.dp, end = 16.dp, top = 12.dp, bottom = 48.dp),
                 style = MaterialTheme.typography.headlineSmall,
                 color = Color.White,
                 fontWeight = FontWeight.Bold
