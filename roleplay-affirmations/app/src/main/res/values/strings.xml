@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">Roleplay Affirmations</string>
+    <string name="affirmation1" > Today\'s challenge is merely a skill I haven\'t rolled yet.</string>
+    <string name="affirmation2" > Every encounter has a second wind. So do I.</string>
+    <string name="affirmation3" > I did not come this far to fail a passive perception check.</string>
+    <string name="affirmation4" > I roll with advantage on being myself.</string>
+    <string name="affirmation5" > I have survived the owlbear. I can survive this group project.</string>
+    <string name="monk1" > My body is a weapon, my mind is a fortress, and my to-do list is merely a suggestion.</string>
+    <string name="monk2" > I do not need armor. I AM the armor. Now, I will roll for initiative.</string>
+    <string name="monk3" > The path to inner peace runs directly through the coffee maker. I have mapped this route. It is reliable.</string>
+    <string name="monk4" > I do not need caffeine to function. I simply need it to not be a problem for everyone else.</string>
+    <string name="monk5" > My chi is aligned. My ki is focused. I am in perfect balance.</string>
+    <string name="shaman1" > I am a mere conduit between worlds. Who am I to refuse the demands of the spirits for glazed offerings?</string>
+    <string name="shaman2" > The spirit world sees my worth even when I cannot.</string>
+    <string name="sharman3" > I am a bridge between worlds. I can handle this meeting.</string>
+    <string name="shaman4" > My spirit companion never judges me.</string>
+    <string name="shaman5" > I do not argue with the spirits. I have enough going on.</string>
+    <string name="barbarian1" > First I RAGE. Then I process my feelings.</string>
+    <string name="barbarian2" > Others plan. Others scheme. I simply show up and problems resolve themselves.</string>
+    <string name="barbarian3" > I take half damage from negative self-talk. The other half just makes me stronger.</string>
+    <string name="barbarian4" > I\'m not loud. I\'m projecting confidence with Intimidate proficiency.</string>
+    <string name="barbarian5" > My anger is not a flaw, it\'s a class feature.</string>
+    <string name="nohohank1" > Fly like Bug Bunny in Space Jam</string>
 </resources>
