@@ -7,11 +7,11 @@ class Datasource() {
     fun loadAffirmations(): List<Affirmation> {
         return listOf(
             // Generic
-            Affirmation(R.string.affirmation1, R.drawable.barbarian_grog),
-            Affirmation(R.string.affirmation2, R.drawable.barbarian_grog_2),
-            Affirmation(R.string.affirmation3, R.drawable.barbarian_karlach),
-            Affirmation(R.string.affirmation4, R.drawable.barbarian_karlach_2),
-            Affirmation(R.string.affirmation5, R.drawable.barbarian_tormund),
+            Affirmation(R.string.affirmation1, R.drawable.affirm3),
+            Affirmation(R.string.affirmation2, R.drawable.affirm4),
+            Affirmation(R.string.affirmation3, R.drawable.affirm2),
+            Affirmation(R.string.affirmation4, R.drawable.affirm5),
+            Affirmation(R.string.affirmation5, R.drawable.affirm1),
             // Monk
             Affirmation(R.string.monk1, R.drawable.monk1),
             Affirmation(R.string.monk2, R.drawable.monk2),
@@ -25,10 +25,10 @@ class Datasource() {
             Affirmation(R.string.shaman4, R.drawable.shaman4),
             Affirmation(R.string.shaman5, R.drawable.shaman5),
             // Barbarian
-            Affirmation(R.string.barbarian1, R.drawable.barbarian_grog),
-            Affirmation(R.string.barbarian2, R.drawable.barbarian_grog_2),
-            Affirmation(R.string.barbarian3, R.drawable.barbarian_karlach),
-            Affirmation(R.string.barbarian4, R.drawable.barbarian_karlach_2),
+            Affirmation(R.string.barbarian4, R.drawable.barbarian_grog),
+            Affirmation(R.string.barbarian3, R.drawable.barbarian_grog_2),
+            Affirmation(R.string.barbarian1, R.drawable.barbarian_karlach),
+            Affirmation(R.string.barbarian2, R.drawable.barbarian_karlach_2),
             Affirmation(R.string.barbarian5, R.drawable.barbarian_tormund),
             // NoHo Hank
             Affirmation(R.string.nohohank1, R.drawable.nohohank),
