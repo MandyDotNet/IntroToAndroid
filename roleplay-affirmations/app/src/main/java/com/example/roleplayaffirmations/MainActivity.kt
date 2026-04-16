@@ -71,7 +71,7 @@ fun AffirmationsApp() {
             )
     ) { }
     AffirmationList(
-        affirmationList = Datasource().loadAffirmations()
+        affirmationList = Datasource().loadAffirmations().shuffled()
     )
 }
 
