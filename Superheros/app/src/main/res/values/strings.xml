@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Superheros</string>
+    <string name="prof_x">Professor X</string>
+    <string name="profDesc">Omega-level mutant with telepathic powers ranging up to 250 miles, unaided.</string>
+    <string name="wolverine">Wolverine</string>
+    <string name="wolfDesc">Animalistic brawler with high-level regenerative healing and adamantium-laced skeleton.</string>
+    <string name="storm">Storm</string>
+    <string name="stormDesc">Omega-level mutant with control over atmospheric and meteorological phenomena.</string>
+    <string name="gambit">Gambit</string>
+    <string name="gambitDesc">A charming mutant from Louisiana with the ability to charge objects with explosive energy.</string>
+    <string name="rogue">Rogue</string>
+    <string name="rogueDesc">A Southern belle whose power involves absorbing the memories, abilities, and life force of anyone she touches.</string>
+    <string name="beast">Beast</string>
+    <string name="beastDesc">Brilliant, simian-like mutant who combines genius-level intellect with superhuman physical abilities.</string>
 </resources>
