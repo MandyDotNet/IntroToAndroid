@@ -10,8 +10,8 @@ import androidx.compose.ui.text.font.Font
 
 
 val Cabin = FontFamily(
-    Font(R.font.Cabin_Regular, FontWeight.Normal),
-    Font(R.font.Cabin_Bold, FontWeight.Bold)
+    Font(R.font.cabin_regular, FontWeight.Normal),
+    Font(R.font.cabin_bold, FontWeight.Bold)
 )
 
 
