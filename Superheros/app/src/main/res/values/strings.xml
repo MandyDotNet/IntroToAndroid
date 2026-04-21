@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Superheros</string>
+    <string name="app_name">Superheroes</string>
     <string name="prof_x">Professor X</string>
     <string name="profDesc">Omega-level mutant with telepathic powers ranging up to 250 miles, unaided.</string>
     <string name="wolverine">Wolverine</string>
