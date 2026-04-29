@@ -52,6 +52,7 @@ class ItemEntryViewModel(private val itemsRepository: ItemsRepository) : ViewMod
 
     suspend fun saveItem() {
         if(validateInput()) {
+            //check if itemUiState is valid, converting to Item, and inserting in the database using repo.insertItem()
             itemsRepository.insertItem(itemUiState.itemDetails.toItem())
         }
     }
