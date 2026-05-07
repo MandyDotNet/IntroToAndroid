@@ -27,7 +27,7 @@ import androidx.room.PrimaryKey
 data class Item(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
-    val name: String,
+    val name: String, //this is non-nullable
     val price: Double,
     val quantity: Int
 )
