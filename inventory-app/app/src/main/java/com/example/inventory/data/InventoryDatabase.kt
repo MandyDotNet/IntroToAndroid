@@ -12,6 +12,11 @@ abstract class InventoryDatabase : RoomDatabase() {
     //returns the ItemDao so that the database knows about the DAO
     abstract fun itemDao(): ItemDao
 
+    //The Singleton Pattern Implementation:
+    //  if the assignment to Instance is skipped or app process killed in the background, the database resets to null.
+    // for this implementation, a good fallback could be .fallbackToDestructiveMigration()
+    // though with development if the file becomes corrupted or a context change happens, the database will still clear.
+    // Emulators often have snapshot resets which is likely the cause for a change in the DB in my case.
     companion object {
         //allows access to the methods to create or get the database and uses the class name as the qualifier
         @Volatile   //never cached, all reads and writes are from main memory
