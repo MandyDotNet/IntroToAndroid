@@ -60,6 +60,10 @@ class ItemDetailsViewModel(
             }
         }
     }
+
+    fun deleteItem() {
+        itemsRepository.deleteItem(uiState.value.itemDetails.toItem())
+    }
 }
 
 /**
