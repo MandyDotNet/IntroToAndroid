@@ -42,6 +42,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -81,6 +82,10 @@ fun ItemDetailsScreen(
     val uiState = viewModel.uiState.collectAsState() //current Item
     val coroutineScope = rememberCoroutineScope()
 
+    LaunchedEffect(viewModel.itemDeleted) {
+        if (viewModel.itemDeleted) navigateBack()
+    }
+
     Scaffold(
         topBar = {
             InventoryTopAppBar(
@@ -102,21 +107,22 @@ fun ItemDetailsScreen(
             }
         }, modifier = modifier
     ) { innerPadding ->
-        ItemDetailsBody(
-            itemDetailsUiState = uiState.value,
-            onSellItem = { viewModel.reduceQuantityByOne() },
-            onDelete = { coroutineScope.launch {
-                viewModel.deleteItem()
-                navigateBack()
-            }},
-            modifier = Modifier
-                .padding(
-                    start = innerPadding.calculateStartPadding(LocalLayoutDirection.current),
-                    end = innerPadding.calculateEndPadding(LocalLayoutDirection.current),
-                    top = innerPadding.calculateTopPadding()
-                )
-                .verticalScroll(rememberScrollState())
-        )
+        if(!viewModel.itemDeleted){
+            ItemDetailsBody(
+                itemDetailsUiState = uiState.value,
+                onSellItem = { viewModel.reduceQuantityByOne() },
+                onDelete = { coroutineScope.launch {
+                    viewModel.deleteItem()
+                }},
+                modifier = Modifier
+                    .padding(
+                        start = innerPadding.calculateStartPadding(LocalLayoutDirection.current),
+                        end = innerPadding.calculateEndPadding(LocalLayoutDirection.current),
+                        top = innerPadding.calculateTopPadding()
+                    )
+                    .verticalScroll(rememberScrollState())
+            )
+        }
     }
 }
 

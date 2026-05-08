@@ -16,6 +16,9 @@
 
 package com.example.inventory.ui.item
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.example.inventory.data.ItemsRepository
@@ -36,6 +39,8 @@ class ItemDetailsViewModel(
 ) : ViewModel() {
 
     private val itemId: Int = checkNotNull(savedStateHandle[ItemDetailsDestination.ITEMIDARG])
+    var itemDeleted by mutableStateOf(false)
+        private set
 
     val uiState: StateFlow<ItemDetailsUiState> =
         itemsRepository.getItemStream(itemId)
@@ -63,6 +68,7 @@ class ItemDetailsViewModel(
 
     suspend fun deleteItem() {
         itemsRepository.deleteItem(uiState.value.itemDetails.toItem())
+        itemDeleted = true
     }
 }
 
