@@ -47,11 +47,12 @@ class WorkManagerBluromaticRepository(context: Context) : BluromaticRepository {
     override fun applyBlur(blurLevel: Int) {
 
         //add cleanup worker
-        var continuation = workManager.beginWith(   //use helper function by WorkManager KTX ext
+        var continuation = workManager.beginWith(
             OneTimeWorkRequest.from(CleanupWorker::class.java))
 
         //blur image one time when Start button is clicked, create workRequest
         val blurBuilder = OneTimeWorkRequestBuilder<BlurWorker>()
+        blurBuilder.setInputData(createInputDataForWorkRequest(blurLevel, imageUri))
 
         continuation = continuation.then(blurBuilder.build())
 
