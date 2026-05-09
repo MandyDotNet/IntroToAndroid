@@ -62,17 +62,18 @@ class WorkManagerBluromaticRepository(context: Context) : BluromaticRepository {
             ExistingWorkPolicy.REPLACE,
             OneTimeWorkRequest.from(CleanupWorker::class.java))
 
-        //blur image one time when Start button is clicked, create workRequest
-        val blurBuilder = OneTimeWorkRequestBuilder<BlurWorker>()
-        blurBuilder.setInputData(createInputDataForWorkRequest(blurLevel, imageUri))
-
-        continuation = continuation.then(blurBuilder.build())
-
+        //create low battery constraint
         val constraints = Constraints.Builder()
             .setRequiresBatteryNotLow(true)
             .build()
 
+        //blur image one time when Start button is clicked, create workRequest
+        val blurBuilder = OneTimeWorkRequestBuilder<BlurWorker>()
+        blurBuilder.setInputData(createInputDataForWorkRequest(blurLevel, imageUri))
+
         blurBuilder.setConstraints(constraints)
+
+        continuation = continuation.then(blurBuilder.build())
 
         // Add WorkRequest to save the image to the filesystem
         val save = OneTimeWorkRequestBuilder<SaveImageToFileWorker>()
