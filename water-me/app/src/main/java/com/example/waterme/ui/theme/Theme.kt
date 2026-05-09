@@ -46,8 +46,6 @@ private val LightColorScheme = lightColorScheme(
 @Composable
 fun WaterMeTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    // Dynamic color in this app is turned off for learning purposes
     dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
@@ -56,14 +54,19 @@ fun WaterMeTheme(
             val context = LocalContext.current
             if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
         }
-
         darkTheme -> DarkColorScheme
         else -> LightColorScheme
     }
+
     val view = LocalView.current
     if (!view.isInEditMode) {
         SideEffect {
-            setUpEdgeToEdge(view, darkTheme)
+            val window = (view.context as Activity).window
+            // This replaces the deprecated setUpEdgeToEdge call
+            WindowCompat.getInsetsController(window, view).apply {
+                isAppearanceLightStatusBars = !darkTheme
+                isAppearanceLightNavigationBars = !darkTheme
+            }
         }
     }
 
@@ -71,24 +74,4 @@ fun WaterMeTheme(
         colorScheme = colorScheme,
         content = content
     )
-}
-
-/**
- * Sets up edge-to-edge for the window of this [view]. The system icon colors are set to either
- * light or dark depending on whether the [darkTheme] is enabled or not.
- */
-private fun setUpEdgeToEdge(view: View, darkTheme: Boolean) {
-    val window = (view.context as Activity).window
-    WindowCompat.setDecorFitsSystemWindows(window, false)
-    window.statusBarColor = Color.Transparent.toArgb()
-    val navigationBarColor = when {
-        Build.VERSION.SDK_INT >= 29 -> Color.Transparent.toArgb()
-        Build.VERSION.SDK_INT >= 26 -> Color(0xFF, 0xFF, 0xFF, 0x63).toArgb()
-        // Min sdk version for this app is 24, this block is for SDK versions 24 and 25
-        else -> Color(0x00, 0x00, 0x00, 0x50).toArgb()
-    }
-    window.navigationBarColor = navigationBarColor
-    val controller = WindowCompat.getInsetsController(window, view)
-    controller.isAppearanceLightStatusBars = !darkTheme
-    controller.isAppearanceLightNavigationBars = !darkTheme
 }
