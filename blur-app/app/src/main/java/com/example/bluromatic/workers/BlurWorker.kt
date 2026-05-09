@@ -14,6 +14,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import androidx.core.net.toUri
+import androidx.work.workDataOf
 
 private const val TAG = "BlurWorker"
 
@@ -24,10 +25,10 @@ class BlurWorker (ctx: Context, params: WorkerParameters
             val resourceUri = inputData.getString(KEY_IMAGE_URI)
             val blurLevel = inputData.getInt(KEY_BLUR_LEVEL, 1)
 
-            makeStatusNotification(
-                applicationContext.resources.getString(R.string.blurring_image),
-                applicationContext
-            )
+//            makeStatusNotification(
+//                applicationContext.resources.getString(R.string.blurring_image),
+//                applicationContext
+//            )
 
             return withContext(Dispatchers.IO) {
                 //utility function to make the emulator work slower
@@ -53,7 +54,10 @@ class BlurWorker (ctx: Context, params: WorkerParameters
                     //write bitmap to a temp file
                     val outputUri = writeBitmapToFile(applicationContext, output)
 
-                    Result.success()
+                    //ensure output data object is created and converted
+                    val outputData = workDataOf(KEY_IMAGE_URI to outputUri.toString())
+                    //ensure output string is passed
+                    Result.success(outputData)
                 } catch (throwable: Throwable) {
                     Log.e(
                         TAG,
