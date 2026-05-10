@@ -52,6 +52,9 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.waterme.ui.theme.WaterMeTheme
 import com.example.waterme.FIVE_SECONDS
+import com.example.waterme.ONE_MINUTE
+import com.example.waterme.TWO_MINUTES
+import com.example.waterme.THREE_MINUTES
 import com.example.waterme.ONE_DAY
 import com.example.waterme.R
 import com.example.waterme.SEVEN_DAYS
@@ -153,6 +156,9 @@ fun ReminderDialogContent(
 ) {
     val reminders = listOf(
         Reminder(R.string.five_seconds, FIVE_SECONDS, TimeUnit.SECONDS, plantName),
+        Reminder(R.string.one_minute, ONE_MINUTE, TimeUnit.MINUTES, plantName),
+        Reminder(R.string.two_minutes, TWO_MINUTES, TimeUnit.MINUTES, plantName),
+        Reminder(R.string.three_minutes, THREE_MINUTES, TimeUnit.MINUTES, plantName),
         Reminder(R.string.one_day, ONE_DAY, TimeUnit.DAYS, plantName),
         Reminder(R.string.one_week, SEVEN_DAYS, TimeUnit.DAYS, plantName),
         Reminder(R.string.one_month, THIRTY_DAYS, TimeUnit.DAYS, plantName)
